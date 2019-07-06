@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Listas_1
 {
-    class Lista_Ligada
+    public class Lista_Ligada
     {
         //Es el ancla o encabezado de la lista
         public Nodito ancla;

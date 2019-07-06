@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Listas_1
 {
-    class Nodito
+    public class Nodito
     {
         //Aquí colocamos el dato o datos que guarda el nodo.
         private int dato;

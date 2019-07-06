@@ -1,0 +1,24 @@
+[33mcommit 3a8f1886914440af29af59eec2e3f3555c6e7262[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 3179ef5 2657bfc
+Author: Ricardo16X <ricardope1664@gmail.com>
+Date:   Sat Jul 6 00:59:09 2019 -0600
+
+    Merge branch 'master' of https://github.com/Ricardo16X/DataStructure_C-_Nicosio
+
+[33mcommit 3179ef5d07d7c1aaf988a18764241fd119ec2212[m
+Author: Ricardo16X <ricardope1664@gmail.com>
+Date:   Sat Jul 6 00:40:27 2019 -0600
+
+    Comentario
+
+[33mcommit 2657bfc5050b230fbe0c0dafe1fbdff1df7a6bc9[m
+Author: Ricardo16X <ricardope1664@gmail.com>
+Date:   Sat Jul 6 00:40:27 2019 -0600
+
+    Correcto
+
+[33mcommit 3a658b1a0bf37aadd427ec566bc81f1fd631b597[m
+Author: Ricardo16X <ricardope1664@gmail.com>
+Date:   Fri Jul 5 23:38:56 2019 -0600
+
+    Agregando Carpeta Listas que contiene el seguimiento de las Listas Ligadas
