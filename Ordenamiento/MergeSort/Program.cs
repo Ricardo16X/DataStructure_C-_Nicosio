@@ -17,7 +17,6 @@ namespace MergeSort
             lista.Agregar(68);
             lista.Agregar(24);
             lista.Agregar(75);
-            lista.Agregar(1);
             lista.Transversa();
 
             Lista_Ligada mergeSort = new Lista_Ligada();
