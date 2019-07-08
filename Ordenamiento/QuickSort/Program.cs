@@ -13,22 +13,11 @@ namespace QuickSort
         static void Main(string[] args)
         {
             
-            lista1.Agregar(1);
-            lista1.Agregar(3);
-            lista1.Agregar(5);
-            lista1.Agregar(7);
-            lista1.Agregar(9);
-            lista1.Agregar(2);
-            lista1.Agregar(4);
-            lista1.Agregar(6);
-            lista1.Agregar(8);
-            lista1.Agregar(0);
-            lista1.Agregar(1);
-            lista1.Agregar(3);
-            lista1.Agregar(5);
-            lista1.Agregar(7);
-            lista1.Agregar(9);
-            lista1.Agregar(2);
+            lista1.Agregar(73489);
+            lista1.Agregar(12978);
+            lista1.Agregar(48);
+            lista1.Agregar(43);
+            lista1.Agregar(1092);
             lista1.Transversa();
 
             quickSort(1, lista1.getSize());
