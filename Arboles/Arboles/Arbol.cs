@@ -56,5 +56,23 @@ namespace Arboles
                 return temp;
             }
         }
+
+        // Transversa Pre Order
+        public void TransversaPre(NodoArbolG nodo)
+        {
+            if (nodo == null) { return; }
+            // Me proceseo primero a mí...
+            for (int n = 0; n < i; n++) { Console.Write(" "); }
+            Console.WriteLine(nodo.Dato);
+            // Luego proceso a mi hijo
+            if (nodo.Hijo != null)
+            {
+                i++;
+                TransversaPre(nodo.Hijo);
+                i--;
+            }
+            // Si tengo hermanos los proceso
+            if (nodo.Hermano != null) { TransversaPre(nodo.Hermano); }
+        }
     }
 }
