@@ -74,5 +74,47 @@ namespace Arboles
             // Si tengo hermanos los proceso
             if (nodo.Hermano != null) { TransversaPre(nodo.Hermano); }
         }
+
+        public void TransversaPost(NodoArbolG nodo)
+        {
+            if (nodo == null) { return; }
+            // Primero proceso a mi hijo
+            if (nodo.Hijo != null)
+            {
+                i++;
+                TransversaPost(nodo.Hijo);
+                i--;
+            }
+            // Si tengo hermanos los proceso
+            if (nodo.Hermano != null) { TransversaPost(nodo.Hermano); }
+            // Luego me proceso a mí.
+            for (int n = 0; n < i; n++) { Console.Write(" "); }
+            Console.WriteLine(nodo.Dato);
+        }
+
+        public NodoArbolG Buscar(string valor, NodoArbolG nodo)
+        {
+            NodoArbolG encontrado = null;
+            if (nodo == null) { return encontrado; }
+            if (nodo.Dato.CompareTo(valor) == 0)
+            {
+                encontrado = nodo;
+                return encontrado;
+            }
+            // Luego proceso a mi hijo
+            if (nodo.Hijo != null)
+            {
+                encontrado = Buscar(valor, nodo.Hijo);
+                if (encontrado != null) { return encontrado; }
+            }
+            // Si tengo hermanos los proceso
+            if (nodo.Hermano != null)
+            {
+                encontrado = Buscar(valor, nodo.Hermano);
+                if (encontrado != null) { return encontrado; }
+            }
+
+            return encontrado;
+        }
     }
 }
