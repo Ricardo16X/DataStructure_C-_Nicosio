@@ -60,6 +60,24 @@ namespace ArbolBinario
                 Transversa(nodo.Der);
                 i--;
             }
-        }    
+        }
+
+        public Nodo Menor(Nodo nodo)
+        {
+            trabajo = nodo;
+            if (trabajo == null) { return trabajo; }
+            // Si tengo hijos a la izquierda, los proceso
+            if (trabajo.Izq != null) { trabajo = Menor(trabajo.Izq); }
+            return trabajo;
+        }
+
+        public Nodo Mayor(Nodo nodo)
+        {
+            trabajo = nodo;
+            if (trabajo == null) { return trabajo; }
+            // Si tengo hijos a la derecha, los proceso
+            if (nodo.Der != null) { trabajo = Mayor(trabajo.Der); }
+            return trabajo;
+        }
     }
 }

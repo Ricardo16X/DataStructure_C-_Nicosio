@@ -30,6 +30,10 @@ namespace ArbolBinario
             arbol.Insertar(12, raiz);
             // Mostrando el contenido del árbol
             arbol.Transversa(raiz);
+
+            // Mostrando el menor
+            Console.WriteLine("Menor del árbol = " + arbol.Menor(raiz).Dato);
+            Console.WriteLine("Menor del árbol = " + arbol.Mayor(raiz).Dato);
         }
     }
 }
