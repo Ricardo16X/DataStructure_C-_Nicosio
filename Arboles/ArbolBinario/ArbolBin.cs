@@ -71,7 +71,7 @@ namespace ArbolBinario
                 // Si tengo hijos a la izquierda, los proceso
                 if (trabajo.Izq != null) { trabajo = Menor(trabajo.Izq); }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -110,6 +110,79 @@ namespace ArbolBinario
                 i++;
                 TransversaOrdenada(nodito.Der);
                 i--;
+            }
+        }
+
+        public Nodo Padre(int hijo, Nodo noditoRaiz)
+        {
+            if (hijo < noditoRaiz.Dato)
+            {
+                if (noditoRaiz.Izq.Dato == hijo)
+                {
+                    // He encontrado al padre
+                    trabajo = noditoRaiz;
+                }
+                else
+                {
+                    Padre(hijo, noditoRaiz.Izq);
+                }
+            }
+            else if (hijo > noditoRaiz.Dato)
+            {
+                if (noditoRaiz.Der.Dato == hijo)
+                {
+                    trabajo = noditoRaiz;
+                }
+                else
+                {
+                    Padre(hijo, noditoRaiz.Der);
+                }
+            }
+            else if (noditoRaiz.Dato == hijo)
+            {
+                return noditoRaiz;
+            }
+            return trabajo;
+        }
+
+        public void BorrarNodo(int dato, Nodo noditoPadre)
+        {
+            if (dato < noditoPadre.Dato)
+            {
+                BorrarNodo(dato, noditoPadre.Izq);
+            }
+            else if (dato > noditoPadre.Dato)
+            {
+                BorrarNodo(dato, noditoPadre.Der);
+            }
+            else // El dato y el noditoPadre.Dato son iguales, por lo tanto he encontrado el nodo a borrar
+            {
+                if (noditoPadre.Izq == null && noditoPadre.Der == null)         // Si es una hoja 'Funciona Perfecto
+                {
+                    trabajo = Padre(dato, Raiz);
+                    if (dato < trabajo.Dato) { trabajo.Izq = null; }
+                    else { trabajo.Der = null; }
+                }
+                else if (noditoPadre.Der != null && noditoPadre.Izq == null)    // Si solamente tiene un hijo a la derecha 'Funciona Perfecto
+                {
+                    trabajo = Padre(dato, Raiz);
+                    if (dato < trabajo.Dato) { trabajo.Izq = noditoPadre.Der; }
+                    else { trabajo.Der = noditoPadre.Der; }
+                }
+                else if (noditoPadre.Der == null && noditoPadre.Izq != null)    // Si solamente tiene un hijo a la izquierda 'Funciona Perfecto
+                {
+                    trabajo = Padre(dato, Raiz);
+                    if (dato > trabajo.Dato) { trabajo.Der = noditoPadre.Izq; }
+                    else { trabajo.Izq = noditoPadre.Izq; }
+                    
+                }
+                else if (noditoPadre.Izq != null && noditoPadre.Der != null)    // Si ambos tienen hijos
+                {
+                    trabajo = Menor(noditoPadre.Der);   // Obtengo el menor del lado derecho
+                    int menor = trabajo.Dato;
+                    BorrarNodo(menor, noditoPadre);
+                    noditoPadre.Dato = menor;
+                }
             }
         }
     }
