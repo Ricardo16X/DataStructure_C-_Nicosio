@@ -64,20 +64,53 @@ namespace ArbolBinario
 
         public Nodo Menor(Nodo nodo)
         {
-            trabajo = nodo;
-            if (trabajo == null) { return trabajo; }
-            // Si tengo hijos a la izquierda, los proceso
-            if (trabajo.Izq != null) { trabajo = Menor(trabajo.Izq); }
+            try
+            {
+                trabajo = nodo;
+                if (trabajo == null) { return trabajo; }
+                // Si tengo hijos a la izquierda, los proceso
+                if (trabajo.Izq != null) { trabajo = Menor(trabajo.Izq); }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return trabajo;
         }
 
         public Nodo Mayor(Nodo nodo)
         {
-            trabajo = nodo;
-            if (trabajo == null) { return trabajo; }
-            // Si tengo hijos a la derecha, los proceso
-            if (nodo.Der != null) { trabajo = Mayor(trabajo.Der); }
+            try
+            {
+                trabajo = nodo;
+                if (trabajo == null) { return trabajo; }
+                // Si tengo hijos a la derecha, los proceso
+                if (nodo.Der != null) { trabajo = Mayor(trabajo.Der); }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return trabajo;
+        }
+
+        public void TransversaOrdenada(Nodo nodito)
+        {
+            if (nodito == null) { return; }
+            // Si tengo izquierda, proceso a la izquierda
+            if (nodito.Izq != null)
+            {
+                i++;
+                TransversaOrdenada(nodito.Izq);
+                i--;
+            }
+            Console.Write("{0}, ", nodito.Dato);
+            if (nodito.Der != null)
+            {
+                i++;
+                TransversaOrdenada(nodito.Der);
+                i--;
+            }
         }
     }
 }

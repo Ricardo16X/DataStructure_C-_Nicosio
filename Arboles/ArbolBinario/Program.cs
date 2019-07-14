@@ -28,12 +28,16 @@ namespace ArbolBinario
             arbol.Insertar(0, raiz);
             arbol.Insertar(-1, raiz);
             arbol.Insertar(12, raiz);
+            arbol.Insertar(14, raiz);
             // Mostrando el contenido del árbol
             arbol.Transversa(raiz);
 
             // Mostrando el menor
             Console.WriteLine("Menor del árbol = " + arbol.Menor(raiz).Dato);
-            Console.WriteLine("Menor del árbol = " + arbol.Mayor(raiz).Dato);
+            Console.WriteLine("Mayor del árbol = " + arbol.Mayor(raiz).Dato);
+            Console.WriteLine("Transversa Ordenada :");
+            arbol.TransversaOrdenada(raiz);
+            Console.WriteLine();
         }
     }
 }
