@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stack
 {
-    class Stack
+    public class Stack
     {
         // Es el ancla o encabezado del stack
         private Nodo ancla;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stack
 {
-    class Nodo
+    public class Nodo
     {
         // Aquí colocamos el dato o datos que guarda el nodo
         private int valor;
