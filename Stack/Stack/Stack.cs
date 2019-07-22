@@ -84,5 +84,18 @@ namespace Stack
             }
             Console.WriteLine();
         }
+
+        // Cantidad de Elementos
+        public int Cantidad()
+        {
+            int elementos = 0;
+            trabajo = ancla;
+            while (trabajo.Sig != null)
+            {
+                trabajo = trabajo.Sig;
+                elementos++;
+            }
+            return elementos;
+        }
     }
 }
