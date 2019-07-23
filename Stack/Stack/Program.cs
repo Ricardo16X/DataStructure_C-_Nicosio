@@ -11,10 +11,10 @@ namespace Stack
         static void Main(string[] args)
         {
             Stack pila = new Stack();
-            pila.Push(1);
-            pila.Push(2);
-            pila.Push(3);
-            pila.Push(4);
+            //pila.Push(1);
+            //pila.Push(2);
+            //pila.Push(3);
+            //pila.Push(4);
             pila.Transversa();
 
             Console.WriteLine(pila.Pop());

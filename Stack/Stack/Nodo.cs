@@ -9,11 +9,11 @@ namespace Stack
     public class Nodo
     {
         // Aquí colocamos el dato o datos que guarda el nodo
-        private int valor;
+        private char valor;
         // Esta variable de referencia es usada para apuntar al nodo siguiente
         private Nodo Siguiente = null;
         // Propiedades que usaremos
-        public int Dato { get; set; }
+        public char Dato { get; set; }
         internal Nodo Sig { get; set; }
         // Para su facil impresion
         public override string ToString()

@@ -22,7 +22,7 @@ namespace Stack
         }
 
         // Push
-        public void Push(int valor)
+        public void Push(char valor)
         {
             // Creamos el nodo temporal
             Nodo temp = new Nodo();
@@ -34,11 +34,11 @@ namespace Stack
         }
 
         // Pop
-        public int Pop()
+        public char Pop()
         {
             // Esta version no contiene código de seguridad
             // Colocar una excepcion cuando se intente hacer un pop a un stack vacio
-            int valor = 0;
+            char valor = ' ';
             // Llevamos a cabo el trabajo solo si hay elementos en el stack
             if (ancla.Sig != null)
             {
@@ -53,12 +53,12 @@ namespace Stack
         }
 
         // Peek
-        public int Peek()
+        public char Peek()
         {
             // Esta version no contiene código de seguridad
             // Colocar una excepcion cuando se intente hacer un peek a un stack vacio
 
-            int valor = 0;
+            char valor = ' ';
             // Llevamos a cabo el trabajo solamente si hay elementos en el stack
             if (ancla.Sig != null)
             {
